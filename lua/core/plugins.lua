@@ -58,6 +58,9 @@ return require('packer').startup(function(use)
   -- git stuff lol
   use('lewis6991/gitsigns.nvim')
 
+  -- flex
+  use 'andweeb/presence.nvim'
+
   -- auto update just like vscode
   if packer_bootstrap then
     require('packer').sync()
