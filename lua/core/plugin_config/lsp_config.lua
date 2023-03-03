@@ -1,7 +1,7 @@
 require("cmp")
 require("mason").setup()
 require("mason-lspconfig").setup({
-  ensure_installed = { "lua_ls" }
+  ensure_installed = { "lua_ls", "omnisharp"}
 })
 
 -- vscode
@@ -20,6 +20,11 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 -- funny lsp config stuff
 require("lspconfig").lua_ls.setup{
+  on_attach = on_attach,
+  capabilities = capabilities
+}
+
+require("lspconfig").omnisharp.setup{
   on_attach = on_attach,
   capabilities = capabilities
 }
