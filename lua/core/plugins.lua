@@ -58,6 +58,11 @@ return require('packer').startup(function(use)
   -- git stuff lol
   use('lewis6991/gitsigns.nvim')
 
+  -- linting
+  use("jose-elias-alvarez/null-ls.nvim")
+  use("jayp0521/mason-null-ls.nvim")
+
+
   -- flex
   use 'andweeb/presence.nvim'
 
