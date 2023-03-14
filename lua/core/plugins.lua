@@ -24,7 +24,7 @@ return require('packer').startup(function(use)
   use 'nvim-lualine/lualine.nvim'
 
   -- colorschemes
-  use 'ellisonleao/gruvbox.nvim'
+  use { "catppuccin/nvim", as = "catppuccin" }
 
   -- syntax highlighting apparently
   use 'nvim-treesitter/nvim-treesitter'
