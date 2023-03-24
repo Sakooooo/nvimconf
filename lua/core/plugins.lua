@@ -25,6 +25,7 @@ return require('packer').startup(function(use)
 
   -- colorschemes
   use { "catppuccin/nvim", as = "catppuccin" }
+  use {'nyoom-engineering/oxocarbon.nvim'}
 
   -- syntax highlighting apparently
   use 'nvim-treesitter/nvim-treesitter'
