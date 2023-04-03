@@ -1,7 +1,7 @@
 require("cmp")
 require("mason").setup()
 require("mason-lspconfig").setup({
-  ensure_installed = { "lua_ls", "omnisharp"}
+  ensure_installed = { "lua_ls", "omnisharp", "pyright", "clangd"}
 })
 local mason_null_ls = require("mason-null-ls")
 
@@ -16,6 +16,7 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
 end
 
+
 -- enable autocomplete
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
@@ -24,10 +25,9 @@ mason_null_ls.setup({
   ensure_installed = {
     "stylua",
     "csharpier",
-  }
-
-
+  },
 })
+
 
 -- funny lsp config stuff
 require("lspconfig").lua_ls.setup{
@@ -46,6 +46,11 @@ require("lspconfig").cmake.setup{
 }
 
 require("lspconfig").clangd.setup{
+  on_attach = on_attach,
+  capabilities = capabilities
+}
+
+require("lspconfig").pyright.setup{
   on_attach = on_attach,
   capabilities = capabilities
 }

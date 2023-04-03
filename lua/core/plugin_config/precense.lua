@@ -1,7 +1,7 @@
 require("presence").setup({
   -- options
   auto_update = true,
-  neovim_image_text = "carpal tunnel",
+  neovim_image_text = "look at me im different",
   main_image = "neovim",
   client_id = "793271441293967371",
   log_level = nil,
@@ -12,11 +12,11 @@ require("presence").setup({
   show_time = true,
 
   -- the text
-  editing_text = "Editing %s",
-  file_explorer_text = "Browsing %s",
-  git_commit_text = "git push --force time",
-  plugin_manager_text = "bloatwareing neovim",
-  reading_text = "Reading %s",
-  workspace_text = "Folder: %s",
-  line_number_text = "Line %s out of %s",
+  editing_text = "editing %s",
+  file_explorer_text = "browsing %s",
+  git_commit_text = "git push --force",
+  plugin_manager_text = "plugin manager",
+  reading_text = "reading %s",
+  workspace_text = "folder: %s",
+  line_number_text = "line %s out of %s",
 })

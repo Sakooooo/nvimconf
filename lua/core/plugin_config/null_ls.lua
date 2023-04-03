@@ -3,12 +3,13 @@ local null_ls = require("null-ls")
 local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 
-null_ls.setup({
-  sources = {
-    formatting.stylua,
-    formatting.csharpier,
-  }
-})
+-- wonder if this fixes it
+--null_ls.setup({
+--  sources = {
+--    formatting.stylua,
+--    formatting.csharpier,
+--  }
+--})
 
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
@@ -27,5 +28,9 @@ require("null-ls").setup({
             })
         end
     end,
+    sources = {
+      formatting.stylua,
+      formatting.csharpier,
+  }
 })
 
