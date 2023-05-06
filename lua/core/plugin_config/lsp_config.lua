@@ -19,11 +19,12 @@ end
 -- enable autocomplete
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
--- lint format thing
+--format thing
 mason_null_ls.setup({
 	ensure_installed = {
 		"stylua",
 		"csharpier",
+		"prettier",
 	},
 })
 
@@ -51,6 +52,15 @@ require("lspconfig").clangd.setup({
 require("lspconfig").tsserver.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
+})
+
+require("lspconfig").eslint.setup({
+	on_attach = function(client, bufnr)
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			buffer = bufnr,
+			command = "EslintFixAll",
+		})
+	end,
 })
 
 require("lspconfig").pyright.setup({
