@@ -24,8 +24,6 @@ return require("packer").startup(function(use)
 	use("nvim-lualine/lualine.nvim")
 
 	-- colorschemes
-	use({ "catppuccin/nvim", as = "catppuccin" })
-	use({ "nyoom-engineering/oxocarbon.nvim" })
 	use("rebelot/kanagawa.nvim")
 
 	-- syntax highlighting apparently
