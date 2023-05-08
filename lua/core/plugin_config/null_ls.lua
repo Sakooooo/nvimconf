@@ -10,6 +10,8 @@ null_ls.setup({
 		formatting.prettier,
 		formatting.stylua,
 		formatting.csharpier,
+		formatting.clang_format,
+		diagnostics.cpplint,
 	},
 	on_attach = function(client, bufnr)
 		if client.supports_method("textDocument/formatting") then

@@ -16,6 +16,10 @@ vim.opt.shiftwidth = 2
 vim.opt.shiftround = true
 vim.opt.expandtab = true
 
+-- split position
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+
 -- :terminal shell
 vim.opt.shell = "pwsh"
 
@@ -35,3 +39,11 @@ vim.keymap.set("n", "<Up>", ":resize -1<CR>", opts)
 vim.keymap.set("n", "<Down>", ":resize +1<CR>", opts)
 
 -- make split
+vim.keymap.set("n", "nsv", ":vsplit<CR>", opts)
+vim.keymap.set("n", "nsh", ":split<CR>", opts)
+
+-- terminal
+vim.keymap.set("n", "<leader>t", ":split<CR> <BAR> :terminal<CR>")
+
+-- exit terminal with esc
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", opts)
