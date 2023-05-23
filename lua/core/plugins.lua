@@ -65,6 +65,15 @@ return require("packer").startup(function(use)
 	-- flex
 	use("andweeb/presence.nvim")
 
+	-- live server
+	use({
+		"aurum77/live-server.nvim",
+		run = function()
+			require("live_server.util").install()
+		end,
+		cmd = { "LiveServer", "LiveServerStart", "LiveServerStop" },
+	})
+
 	-- auto update just like vscode
 	if packer_bootstrap then
 		require("packer").sync()
