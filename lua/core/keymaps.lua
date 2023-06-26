@@ -21,7 +21,12 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 
 -- :terminal shell
-vim.opt.shell = "pwsh"
+if (vim.loop.os_uname().sysname == "Linux")
+then
+  vim.opt.shell = "bash"
+else 
+  vim.opt.shell = "pwsh"
+end
 
 -- nvimtree
 vim.keymap.set("n", "<leader>e", ":NvimTreeFindFileToggle<CR>", opts)
