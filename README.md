@@ -1,2 +1,1 @@
-# Neovim Configs
-these are kind of bad probably go trashtalk me in issues if you feel like it
+# Moved to [Sakooooo/nixos](https://github.com/Sakooooo/nixos)
